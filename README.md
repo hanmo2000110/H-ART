@@ -2,6 +2,7 @@
 
 A new Flutter project.
 
+12월 28일 출석 Vertex Ai 공부 및 문서화 작업함
 ## Getting Started
 
 This project is a starting point for a Flutter application.
