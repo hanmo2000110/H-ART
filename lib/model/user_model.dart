@@ -7,6 +7,7 @@ class UserModel {
   String? uid;
   String? name;
   String? email;
+  String? sid;
   String? status_message;
   String? profile_image_url;
   int? follower;
@@ -17,6 +18,7 @@ class UserModel {
     this.uid,
     this.name,
     this.email,
+    this.sid,
     this.profile_image_url,
     this.status_message,
     this.follower,
@@ -88,7 +90,4 @@ class UserModel {
     follower = doc['follower'];
     following = doc['following'];
   }
-
-  @override
-  String toString() => "${name ?? 'Anon'} (Uid=$uid)";
 }

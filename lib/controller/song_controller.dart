@@ -12,19 +12,13 @@ class SongController extends GetxController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   // late StreamSubscription<DocumentSnapshot<Map<String, dynamic>>> _postListener;
 
-  // @override
-  // onInit() async {
-  //   await getPosts();
-  //   await getMyPosts();
-  //   await getSavedPosts();
-  //   await getWheatherPosts(0);
-  //   print("getposts finished");
+  @override
+  onInit() async {
+    super.onInit();
+  }
 
-  //   super.onInit();
-  // }
-
-  // List<SongModel> _myPosts = [];
-  // List<SongModel> get myposts => _myPosts;
+  List<SongModel> _songList = [];
+  List<SongModel> get myposts => _songList;
 
   // List<SongModel> _uidPosts = [];
   // List<SongModel> get uidposts => _uidPosts;
@@ -39,42 +33,40 @@ class SongController extends GetxController {
   // List<SongModel> _savedPosts = [];
   // List<SongModel> get savedposts => _savedPosts;
 
-  // Future getMyPosts() async {
-  //   UserController uc = Get.find<UserController>();
-  //   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  //   _myPosts.clear();
-  //   String uid = FirebaseAuth.instance.currentUser!.uid;
-  //   // print(uid);
-  //   var result = await firestore
-  //       .collection('posts')
-  //       .where("creator", isEqualTo: uid)
-  //       .orderBy('createdTime', descending: true)
-  //       .get();
-  //   // print("now testing my Songcontroller");
+  Future getMyPosts() async {
+    UserController uc = Get.find<UserController>();
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    _songList.clear();
+    String uid = FirebaseAuth.instance.currentUser!.uid;
+    // print(uid);
+    var result = await firestore
+        .collection('posts')
+        .where("creator", isEqualTo: uid)
+        .orderBy('createdTime', descending: true)
+        .get();
+    // print("now testing my Songcontroller");
 
-  //   result.docs.forEach((element) async {
-  //     // print(element.data()['creator']);
-  //     String creatorName = await getCreatorInfo(uid);
-  //     SongModel post = SongModel(
-  //       createdTime: element.data()['createdTime'],
-  //       creator: element.data()['creator'],
-  //       creatorName: creatorName,
-  //       post_id: element.data()['post_id'],
-  //       lookType: element.data()['lookType'],
-  //       wheather: element.data()['weather'],
-  //       content: element.data()['content'],
-  //       image_links: element.data()['image_links'].cast<String>(),
-  //     );
-  //     var creator = await firestore.collection('user').doc(post.creator).get();
-  //     post.setCreatorProfilePhotoURL = creator['profile_image_url'];
-  //     post.likes!.value = await countLike(post.post_id);
-  //     post.iLiked = await iLiked(post.post_id);
-  //     post.iSaved = await iSaved(post.post_id);
-  //     _myPosts.add(post);
-  //     // print(element.data()['image_links'].cast<String>()[0]);
-  //   });
-  //   // print(_myPosts.length);
-  // }
+    result.docs.forEach((element) async {
+      // print(element.data()['creator']);
+      String creatorName = await getCreatorInfo(uid);
+      SongModel post = SongModel(
+        createdTime: element.data()['createdTime'],
+        creator: element.data()['creator'],
+        creatorName: creatorName,
+        post_id: element.data()['post_id'],
+        desc: element.data()['desc'],
+        ilink: element.data()['ilink'],
+      );
+      // var creator = await firestore.collection('user').doc(post.creator).get();
+      // post.setCreatorProfilePhotoURL = creator['profile_image_url'];
+      // post.likes!.value = await countLike(post.post_id);
+      // post.iLiked = await iLiked(post.post_id);
+      // post.iSaved = await iSaved(post.post_id);
+      _songList.add(post);
+      // print(element.data()['image_links'].cast<String>()[0]);
+    });
+    print(_songList.length);
+  }
 
   // Future getPostsUid(String uid) async {
   //   UserController uc = Get.find<UserController>();
@@ -222,10 +214,10 @@ class SongController extends GetxController {
   //   });
   // }
 
-  // Future<String> getCreatorInfo(String creator) async {
-  //   var creatorInfo = await firestore.collection('user').doc(creator).get();
-  //   return creatorInfo['name'];
-  // }
+  Future<String> getCreatorInfo(String creator) async {
+    var creatorInfo = await firestore.collection('user').doc(creator).get();
+    return creatorInfo['name'];
+  }
 
   // Future<bool> like(String docid) async {
   //   FirebaseFirestore firestore = FirebaseFirestore.instance;

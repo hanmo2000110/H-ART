@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:h_art/controller/music_controller.dart';
+import 'package:h_art/controller/song_controller.dart';
 import 'package:h_art/notifiers/play_button_notifier.dart';
 import 'package:h_art/notifiers/progress_notifier.dart';
 import 'package:h_art/notifiers/repeat_button_notifier.dart';
@@ -15,7 +16,7 @@ class PageManager {
   final playButtonNotifier = PlayButtonNotifier();
   final isLastSongNotifier = ValueNotifier<bool>(true);
   final isShuffleModeEnabledNotifier = ValueNotifier<bool>(false);
-
+  SongController sc = Get.find<SongController>()
   late AudioPlayer _audioPlayer;
   late ConcatenatingAudioSource _playlist;
 
@@ -180,8 +181,8 @@ class PageManager {
   }
 
   void removeSong() {
-    final index = _playlist.length - 1;
-    if (index < 0) return;
-    _playlist.removeAt(index);
+    // final index = _playlist.length - 1;
+    // if (index < 0) return;
+    // _playlist.removeAt(index);
   }
 }

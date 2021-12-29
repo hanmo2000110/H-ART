@@ -102,7 +102,7 @@ class AddRemoveSongButtons extends StatelessWidget {
           ),
           FloatingActionButton(
             onPressed: _pageManager.removeSong,
-            child: Icon(Icons.remove),
+            child: Icon(Icons.add_box),
           ),
         ],
       ),
