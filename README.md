@@ -4,6 +4,7 @@ A new Flutter project.
 
 12월 28일 출석 Vertex Ai 공부 및 문서화 작업함
 12월 29일 출석 Big Query 공부 및 문서화 작업함
+12월 30일 출석 Big Query 공부 및 문서화 작업함
 ## Getting Started
 
 This project is a starting point for a Flutter application.

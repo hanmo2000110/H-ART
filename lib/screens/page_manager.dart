@@ -16,7 +16,7 @@ class PageManager {
   final playButtonNotifier = PlayButtonNotifier();
   final isLastSongNotifier = ValueNotifier<bool>(true);
   final isShuffleModeEnabledNotifier = ValueNotifier<bool>(false);
-  SongController sc = Get.find<SongController>()
+  SongController sc = Get.find<SongController>();
   late AudioPlayer _audioPlayer;
   late ConcatenatingAudioSource _playlist;
 
