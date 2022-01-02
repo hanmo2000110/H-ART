@@ -1,11 +1,12 @@
 # h_art
 
 A new Flutter project.
-
+12월 2일 출석 했지만 커밋 못함
 12월 28일 출석 Vertex Ai 공부 및 문서화 작업함
 12월 29일 출석 Big Query 공부 및 문서화 작업함
-12월 30일 출석 Big Query 공부 및 문서화 작업함
-12월 31일 출석 Big Query 공부 및 문서화 작업함
+12월 30일 출석 http Web 환경에서 사용 공부 및 문서화 작업함
+12월 31일 출석 결제 시스템 공부 및 문서화 작업함
+1월 3일 출석 결제 시스템 공부 및 문서화 작업함
 ## Getting Started
 
 This project is a starting point for a Flutter application.
