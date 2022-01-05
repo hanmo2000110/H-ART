@@ -8,7 +8,7 @@ A new Flutter project.
 12월 31일 출석 결제 시스템 공부 및 문서화 작업함
 
 1월 3일 출석 Multi Region && remote-config 공부 및 문서화 작업함
-1월 4일 출석 결제 시스템 공부 및 문서화 작업함
+1월 4일 A/B 테스팅 공부
 1월 5일 출석 결제 시스템 공부 및 문서화 작업함
 ## Getting Started
 
