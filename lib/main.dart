@@ -6,7 +6,8 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:h_art/screens/add_page.dart';
 import 'package:h_art/screens/detail_page.dart';
 import 'package:h_art/screens/home_page.dart';
-import 'package:h_art/screens/home_page.dart';
+import 'package:h_art/screens/song_page.dart';
+import 'package:h_art/screens/song_page.dart';
 import 'package:h_art/screens/login_page.dart';
 import 'auth/auth_middleware.dart';
 import 'binding/binding.dart';
@@ -38,6 +39,10 @@ class Hart extends StatelessWidget {
         GetPage(
             name: "/detail",
             page: () => DetailPage(),
+            transition: Transition.noTransition),
+        GetPage(
+            name: "/song",
+            page: () => SongPage(),
             transition: Transition.noTransition),
         GetPage(
             name: "/login",

@@ -181,6 +181,7 @@ class PageManager {
   }
 
   void removeSong() {
+    print("clicked");
     // final index = _playlist.length - 1;
     // if (index < 0) return;
     // _playlist.removeAt(index);

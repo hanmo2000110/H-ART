@@ -9,8 +9,9 @@ A new Flutter project.
 
 1월 3일 출석 Multi Region && remote-config 공부 및 문서화 작업함
 1월 4일 A/B 테스팅 공부
-1월 5일 출석 결제 시스템 공부 및 문서화 작업함
-1월 5일 출석 결제 시스템 공부 및 문서화 작업함
+1월 5일 A/B testing 문서화 및 Dart Service 작업함
+1월 6일 Dart Service Cloud Run에 업로드하는 작업함
+1월 7일 출석 결제 시스템 공부 및 문서화 작업함
 ## Getting Started
 
 This project is a starting point for a Flutter application.
