@@ -128,6 +128,7 @@ class PageManager {
 
   void play() async {
     _audioPlayer.play();
+    // _audioPlayer.
   }
 
   void pause() {
@@ -173,11 +174,11 @@ class PageManager {
   }
 
   Future<void> addSong() async {
-    MusicController mc = Get.find<MusicController>();
-    await mc.pickFile();
-    print(mc.url);
-    final song = Uri.parse(mc.url);
-    _playlist.add(AudioSource.uri(song, tag: 'Song test'));
+    // SongController mc = Get.find<SongController>();
+    // await mc.pickAudioFile();
+    // print(mc.ifile);
+    // final song = Uri.parse(mc.sfile);
+    // _playlist.add(AudioSource.uri(song, tag: 'Song test'));
   }
 
   void removeSong() {
